@@ -11,94 +11,77 @@ dataSpyList.forEach(function (dataSpyEl) {
   bootstrap.ScrollSpy.getInstance(dataSpyEl).refresh();
 });
 
-(function () {
-  const scrollto = (el) => {
-    let header = select("#navbar");
-    let offset = header.offsetHeight;
-
-    if (!header.classList.contains("header-scrolled")) {
-      offset -= 16;
-    }
-
-    let elementPos = select(el).offsetTop;
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: "smooth",
-    });
-  };
+$(".home-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: 0,
+    },
+    1000
+  );
 });
 
-// $(".home-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: 0,
-//     },
-//     1000
-//   );
-// });
+$(".about-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#about").offset().top - 100,
+    },
+    1000
+  );
+});
 
-// $(".about-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#about").offset().top - 100,
-//     },
-//     1000
-//   );
-// });
+$(".portfolio-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#portfolio").offset().top - 60,
+    },
+    1000
+  );
+});
 
-// $(".portfolio-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#portfolio").offset().top - 60,
-//     },
-//     1000
-//   );
-// });
+$(".services-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#services").offset().top - 100,
+    },
+    1000
+  );
+});
 
-// $(".services-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#services").offset().top - 100,
-//     },
-//     1000
-//   );
-// });
+$(".testimonial-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#testimonial").offset().top - 70,
+    },
+    1000
+  );
+});
 
-// $(".testimonial-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#testimonial").offset().top - 70,
-//     },
-//     1000
-//   );
-// });
+$(".pricing-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#pricing").offset().top - 100,
+    },
+    1000
+  );
+});
 
-// $(".pricing-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#pricing").offset().top - 100,
-//     },
-//     1000
-//   );
-// });
+$(".team-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#team").offset().top - 80,
+    },
+    1000
+  );
+});
 
-// $(".team-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#team").offset().top - 80,
-//     },
-//     1000
-//   );
-// });
-
-// $(".contact-btn").click(function () {
-//   $([document.documentElement, document.body]).animate(
-//     {
-//       scrollTop: $("#footer").offset().top - 100,
-//     },
-//     1000
-//   );
-// });
+$(".contact-btn").click(function () {
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $("#footer").offset().top - 100,
+    },
+    1000
+  );
+});
 
 $(document).ready(function () {
   var $obj = lc_lightbox(".portfolio-slider a", {
