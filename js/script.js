@@ -1,3 +1,26 @@
+$('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function (event) {
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      if (target.length) {
+        event.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: target.offset().top - 77,
+          },
+          0
+        );
+      }
+    }
+  });
+
 var scrollSpy = new bootstrap.ScrollSpy(document.body, {
   target: ".navbar",
   offset: 100,
@@ -9,78 +32,6 @@ var dataSpyList = [].slice.call(
 );
 dataSpyList.forEach(function (dataSpyEl) {
   bootstrap.ScrollSpy.getInstance(dataSpyEl).refresh();
-});
-
-$(".home-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: 0,
-    },
-    1000
-  );
-});
-
-$(".about-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#about").offset().top - 100,
-    },
-    1000
-  );
-});
-
-$(".portfolio-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#portfolio").offset().top - 60,
-    },
-    1000
-  );
-});
-
-$(".services-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#services").offset().top - 100,
-    },
-    1000
-  );
-});
-
-$(".testimonial-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#testimonial").offset().top - 70,
-    },
-    1000
-  );
-});
-
-$(".pricing-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#pricing").offset().top - 100,
-    },
-    1000
-  );
-});
-
-$(".team-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#team").offset().top - 80,
-    },
-    1000
-  );
-});
-
-$(".contact-btn").click(function () {
-  $([document.documentElement, document.body]).animate(
-    {
-      scrollTop: $("#footer").offset().top - 100,
-    },
-    1000
-  );
 });
 
 $(document).ready(function () {
@@ -324,7 +275,7 @@ $(window).scroll(function () {
 });
 
 $(".gototop").click(function () {
-  $("html, body").animate({ scrollTop: 0 }, 1000);
+  $("html, body").animate({ scrollTop: 0 }, 2000);
 });
 
 $(".navbar-toggler").click(function () {
